@@ -1,6 +1,6 @@
 # 🖱️ ESP32 Air Mouse
 
-🚀 **ESP32 Air Mouse** adalah proyek yang memungkinkan ESP32 digunakan sebagai mouse nirkabel berbasis gerakan menggunakan sensor **MPU6050**. Proyek ini mendukung tombol klik kiri, klik kanan, scrolling, serta berbagai mode sensitivitas. 
+🚀 **ESP32 Air Mouse** adalah proyek yang memungkinkan ESP32 digunakan sebagai mouse nirkabel berbasis gerakan menggunakan sensor **MPU6050**. Proyek ini mendukung tombol klik kiri, klik kanan, scrolling, serta berbagai mode sensitivitas. PCB 6x8
 
 ## 📌 Fitur
 - 🖱️ **Gerakan Mouse**: Menggunakan sensor **MPU6050** untuk mengontrol kursor dengan gerakan.
