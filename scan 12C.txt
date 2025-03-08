@@ -1,0 +1,38 @@
+#include <Wire.h>
+
+void setup() {
+    Serial.begin(115200);
+    Serial.println("\n🔍 Memulai I2C Scanner...");
+
+    Wire.begin(21, 22);  // SDA = GPIO21, SCL = GPIO22
+}
+
+void loop() {
+    Serial.println("🔄 Memindai perangkat I2C...");
+
+    byte error, address;
+    int nDevices = 0;
+
+    for (address = 1; address < 127; address++) {
+        Wire.beginTransmission(address);
+        error = Wire.endTransmission();
+
+        if (error == 0) {
+            Serial.print("✅ Perangkat ditemukan di alamat 0x");
+            Serial.println(address, HEX);
+            nDevices++;
+        } else if (error == 4) {
+            Serial.print("⚠️ Kesalahan di alamat 0x");
+            Serial.println(address, HEX);
+        }
+    }
+
+    if (nDevices == 0) {
+        Serial.println("❌ Tidak ada perangkat I2C yang ditemukan!");
+    } else {
+        Serial.println("🎯 Pemindaian selesai.");
+    }
+
+    Serial.println("---------------------------");
+    delay(2000);
+}
